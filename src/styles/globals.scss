@@ -10,11 +10,13 @@ body {
     font-family: var(--font-family-base);
     @include fluid-text(18, 14);
     background-color: var(--color-black-08);
+    color: var(--color-white);
 }
 
 main {
     flex-grow: 1;
 }
+
 
 h1, .h1,
 h2, .h2,
