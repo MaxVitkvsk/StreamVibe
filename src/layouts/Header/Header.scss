@@ -1,0 +1,82 @@
+.header {
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    padding-block: fluid(22, 14);
+    border-bottom: var(--border-width-s) solid transparent;
+    animation-fill-mode: both;
+    animation-name: scrolling-header;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+
+    @keyframes scrolling-header {
+        to {
+            padding-block: 10px;
+            background-color: var(--color-black-08);
+            border-color: var(--color-black-25);
+        }
+        
+    }
+
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 16px;
+    }
+
+    &__menu{
+        padding: fluid-to-laptop(10, 8);
+        background-color: &-item ;
+        outline: var(--border-width-l) solid  var(--color-black-12);
+        border-radius: var(--border-radius-l);
+
+        @include laptop {
+            border-radius: var(--border-radius-m);
+        }
+
+        &-list{
+            display: flex;
+            align-items: center;
+            column-gap: 6px;
+        }
+
+        &-link {
+            padding-block: fluid-to-laptop(14, 12);
+            padding-inline: fluid-to-laptop(24, 20);
+            color: var(--color-grey-75);
+            border-radius: var(--border-radius-s);
+            border-radius: 8px;
+
+            @include hover {
+                color: var(--color-white);
+                background-color: var(--color-red-60);
+            }
+
+            @include laptop {
+                border-radius: 10px;
+            }
+
+            &.is-active {
+                font-weight: 500;
+                color: var(--color-white);
+                background-color: var(--color-black-10);
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    @include laptop {
+        column-gap: 14px;
+    }
+
+    
+
+}
